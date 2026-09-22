@@ -1,6 +1,6 @@
 import { expect, Page } from '@playwright/test'
 
-export async function verifyVisible(
+export async function verifyURL(
     page: Page,
     expected: string
 
