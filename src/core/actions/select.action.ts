@@ -1,11 +1,10 @@
-import { Page } from "@playwright/test";
+import { Locator } from "@playwright/test";
 
 export async function selectAction(
-    page: Page,
-    locator: string,
+    locator: Locator,
     value: string
 ): Promise<void> {
 
-    await page.locator(locator).selectOption(value);
+    await locator.selectOption(value);
     
 }
