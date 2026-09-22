@@ -1,11 +1,10 @@
-import { expect, Page } from '@playwright/test'
+import { expect, Locator } from '@playwright/test'
 
 export async function verifyVisible(
-    page: Page,
-    locator: string 
+    locator: Locator 
 
 ): Promise<void> {
 
-    await expect (page.locator(locator)).toBeVisible();
+    await expect (locator).toBeVisible();
     
 }

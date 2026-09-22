@@ -1,11 +1,10 @@
-import { Page, expect } from '@playwright/test'
+import { Locator, expect } from '@playwright/test'
 
 export async function verifyText(
-    page: Page,
-    locator: string,
+    locator: Locator,
     expected: string
 ): Promise<void> {
 
-    await expect(page.locator(locator)).toHaveText(expected);
+    await expect (locator).toHaveText(expected);
     
 }
