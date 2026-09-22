@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-
+import { env } from './config/environment';
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -27,7 +27,9 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-
+    // URL được lấy từ environment hiện tại
+      baseURL: env.baseURL,
+      
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
