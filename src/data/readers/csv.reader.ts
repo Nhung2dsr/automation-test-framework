@@ -7,6 +7,7 @@ import { DataReader } from './dataReader';
 export type CsvRow = Record<string, string>;
 
 export class CsvReader implements DataReader<CsvRow[]> {
+   
     read(filePath: string): CsvRow[] {
          const absolutePath = path.resolve(process.cwd(), filePath);
 

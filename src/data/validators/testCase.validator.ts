@@ -26,8 +26,8 @@ export function validateTestCase(data: unknown): TestCase {
         throw new Error(`Invalid test case "${testCase.id}": description must be a string.`);
     }
 
-    if (!Array.isArray(testCase.steps)) {
-        throw new Error(`Invalid test case "${testCase.id}": steps must be an array.`);
+    if (!Array.isArray(testCase.steps) || testCase.steps.length === 0) {
+        throw new Error(`Invalid test case "${testCase.id}": steps must be a non-empty array.`);
     }
 
     const steps = testCase.steps.map(step => validateTestStep(step));

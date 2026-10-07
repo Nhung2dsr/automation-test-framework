@@ -1,4 +1,4 @@
-import { Keyword } from './keyword.types';
+import { Keyword } from '../../keywords/types/keyword.types';
 
 export interface TestStep {
     keyword: Keyword;
