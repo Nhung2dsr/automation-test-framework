@@ -11,10 +11,4 @@ export class TestEngine {
         }
     }
 
-    async runAll(testCases: TestCase[]){
-        for(const testCase of testCases){
-            await this.run(testCase);
-        }
-    }
-
 }
