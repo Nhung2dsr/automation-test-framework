@@ -22,6 +22,7 @@
     "src/**/*.ts",
     "fixtures/**/*.ts",
     "tests/**/*.ts",
+    "projects/**/*.ts",
     "config/**/*.ts",
     "playwright.config.ts"
   ],
