@@ -6,7 +6,7 @@ import { DataReader } from './dataReader';
 export class JsonReader<T> implements DataReader<T> {
     read(filePath: string): T {
         
-        const absolutePath = path.resolve(process.cwd(), filePath);
+        const absolutePath = path.resolve(filePath);
 
         if (!fs.existsSync(absolutePath)) {
 
