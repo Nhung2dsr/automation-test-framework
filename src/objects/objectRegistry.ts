@@ -15,10 +15,7 @@ export class ObjectRegistry {
 
     private readonly repositories: Record<string, ObjectRepository> = {};
 
-    register(
-        name: string,
-        repository: ObjectRepository
-    ): void {
+    register(name: string, repository: ObjectRepository): void {
 
         const repositoryName = name.trim();
         if (!repositoryName) {
