@@ -19,42 +19,38 @@ export class ObjectResolver {
    *              ↓
    * page.locator('#submit')
    */
-  resolve(
-    definition: LocatorDefinition
-  ): Locator {
+  resolve(definition: LocatorDefinition): Locator {
 
-    switch (definition.type) {
+      switch (definition.type) {
 
-      case 'css':
-        return this.page.locator(definition.value);
+          case 'css':
+              return this.page.locator(definition.value);
 
-      case 'xpath':
-        return this.page.locator(definition.value);
+          case 'xpath':
+              return this.page.locator(definition.value);
 
-      case 'testId':
-        return this.page.getByTestId(definition.value);
+          case 'testId':
+              return this.page.getByTestId(definition.value);
 
-      case 'text':
-        return this.page.getByText(definition.value);
+          case 'text':
+              return this.page.getByText(definition.value);
 
-      case 'label':
-        return this.page.getByLabel(definition.value);
+          case 'label':
+              return this.page.getByLabel(definition.value);
 
-      case 'placeholder':
-        return this.page.getByPlaceholder(definition.value);
+          case 'placeholder':
+              return this.page.getByPlaceholder(definition.value);
 
-      case 'role':
-        return this.page.getByRole(
-          definition.value as Parameters<Page['getByRole']>[0],
-          definition.name
-            ? { name: definition.name }
-            : undefined
-        );
+          case 'role':
+              return this.page.getByRole(
+                definition.value as Parameters<Page['getByRole']>[0],
+                definition.name
+                  ? { name: definition.name }
+                  : undefined
+              );
 
-      default:
-        throw new Error(
-          `Unsupported locator type: ${definition.type}`
-        );
+        default:
+          throw new Error(`Unsupported locator type: ${definition.type}`);
+      }
     }
-  }
 }
