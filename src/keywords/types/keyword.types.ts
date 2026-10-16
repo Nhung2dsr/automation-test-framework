@@ -5,4 +5,4 @@ export type Keyword =
   | 'WAIT'
   | 'VERIFY_TEXT'
   | 'VERIFY_VISIBLE'
-  | 'VERIFY_URL';
+  | 'VERIFY_URL'
