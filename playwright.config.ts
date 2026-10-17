@@ -2,6 +2,9 @@ import { defineConfig, devices } from '@playwright/test';
 
 import { env } from './config/environment';
 import { paths } from './config/paths';
+import path from 'path'
+
+const reportRoot = path.join(paths.project, 'reports');
 
 export default defineConfig({
 
@@ -24,14 +27,29 @@ export default defineConfig({
     workers: process.env.CI ? 1 : undefined,
 
     // Báo cáo HTML
-    reporter: 'html',
+    // reporter: 'html',
+    reporter: [
+        ['list'],
+        ['html', {
+            outputFolder: path.join(reportRoot, 'html'),
+            open: 'never'
+        }],
+        ['json', {
+            outputFile: path.join(reportRoot, 'results.json')
+        }]
+    ],
+
+outputDir: path.join(reportRoot, 'test-results'),
+
 
     use: {
         // URL từ môi trường được chọn
         baseURL: env.baseURL,
 
         // Thu thập trace khi retry lần đầu
-        trace: 'on-first-retry',
+        screenshot: 'only-on-failure',
+        trace: 'retain-on-failure',
+        video: 'retain-on-failure',
     },
 
     // Cấu hình trình duyệt
