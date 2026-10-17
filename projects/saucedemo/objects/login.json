@@ -1,0 +1,22 @@
+{
+  "username": {
+    "type": "css",
+    "value": "#user-name",
+    "name": "Username"
+  },
+  "password": {
+    "type": "css",
+    "value": "#password",
+    "name": "Password"
+  },
+  "loginButton": {
+    "type": "css",
+    "value": "#login-button",
+    "name": "Login button"
+  },
+  "errorMessage": {
+    "type": "css",
+    "value": "[data-test='error']",
+    "name": "Login error message"
+  }
+}

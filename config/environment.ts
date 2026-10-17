@@ -1,38 +1,67 @@
 import path from 'path';
 import dotenv from 'dotenv';
+import { projectConfig } from './project.config';
 
-// Khai báo các môi trường mà framework cho phép sử dụng
+// Các môi trường được hỗ trợ
 type Environment = 'dev' | 'staging' | 'prod';
 
-// Lấy môi trường từ biến TEST_ENV. Nếu người dùng không truyền TEST_ENV thì mặc định sử dụng môi trường dev
-const environment = (process.env.TEST_ENV || 'dev') as Environment;
+const allowedEnvironments: Environment[] = [
+    'dev',
+    'staging',
+    'prod'
+];
 
-const allowedEnvironments: Environment[] = ['dev', 'staging','prod'];
+// Xác định môi trường chạy
+const environmentName = process.env.TEST_ENV || 'dev';
 
-// Kiểm tra TEST_ENV có thuộc danh sách môi trường được hỗ trợ hay không
-if (!allowedEnvironments.includes(environment)) {
-  throw new Error(
-    `Invalid environment: ${environment}. ` +
-    `Allowed environments: dev, staging, prod`
-  );
+// Kiểm tra môi trường hợp lệ
+if (!allowedEnvironments.includes(environmentName as Environment)) {
+    throw new Error(`Invalid environment: ${environmentName}`);
 }
 
-// Tạo đường dẫn tuyệt đối đến file cấu hình môi trường tương ứng
-const envPath = path.resolve(process.cwd(), 'config', 'environments', `${environment}.env`);
+const environment = environmentName as Environment;
 
-const result = dotenv.config({ path: envPath });
+// Xác định đường dẫn file .env theo project
+const envPath = path.resolve(
+    process.cwd(),
+    'config',
+    'environments',
+    projectConfig.name,
+    `${environment}.env`
+);
 
+// Đọc file cấu hình môi trường
+const result = dotenv.config({
+    path: envPath
+});
+
+// Kiểm tra lỗi đọc file
 if (result.error) {
-  throw new Error(`Cannot load environment file: ${envPath}`);
+    throw new Error(`Cannot load environment file: ${envPath}`, { cause: result.error });
 }
 
-// Kiểm tra BASE_URL có được khai báo trong file môi trường hay không
-if (!process.env.BASE_URL) {
-  throw new Error(`BASE_URL is not defined for environment: ${environment}`);
+// Lấy BASE_URL từ file đã đọc
+const baseURL = result.parsed?.BASE_URL;
+
+// Kiểm tra BASE_URL có tồn tại
+if (!baseURL?.trim()) {
+    throw new Error(`BASE_URL is not defined in: ${envPath}`);
 }
 
-// Export cấu hình môi trường để các file khác sử dụng
+// Kiểm tra định dạng URL
+try {
+    const url = new URL(baseURL);
+
+    if (!['http:', 'https:'].includes(url.protocol)) {
+        throw new Error('Unsupported protocol');
+    }
+} catch {
+    throw new Error(`Invalid BASE_URL in: ${envPath}`);
+}
+
+// Export cấu hình môi trường
 export const env = {
     name: environment,
-    baseURL: process.env.BASE_URL
+    project: projectConfig.name,
+    baseURL
 };

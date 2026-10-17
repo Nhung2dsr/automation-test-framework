@@ -1,0 +1,66 @@
+
+[
+  {
+    "id": "PRODUCT_001",
+    "name": "Verify product inventory page",
+    "description": "Verify inventory is visible after successful login",
+    "steps": [
+      {
+        "keyword": "INPUT",
+        "target": "login.username",
+        "data": "standard_user"
+      },
+      {
+        "keyword": "INPUT",
+        "target": "login.password",
+        "data": "secret_sauce"
+      },
+      {
+        "keyword": "CLICK",
+        "target": "login.loginButton"
+      },
+      {
+        "keyword": "VERIFY_URL",
+        "expected": "/inventory.html"
+      },
+      {
+        "keyword": "VERIFY_VISIBLE",
+        "target": "product.inventoryContainer"
+      }
+    ]
+  },
+  {
+    "id": "PRODUCT_002",
+    "name": "Add backpack to cart",
+    "description": "Verify that adding a backpack updates the cart badge",
+    "steps": [
+      {
+        "keyword": "INPUT",
+        "target": "login.username",
+        "data": "standard_user"
+      },
+      {
+        "keyword": "INPUT",
+        "target": "login.password",
+        "data": "secret_sauce"
+      },
+      {
+        "keyword": "CLICK",
+        "target": "login.loginButton"
+      },
+      {
+        "keyword": "CLICK",
+        "target": "product.backpackAddToCart"
+      },
+      {
+        "keyword": "VERIFY_TEXT",
+        "target": "product.cartBadge",
+        "expected": "1"
+      },
+      {
+        "keyword": "VERIFY_VISIBLE",
+        "target": "product.backpackRemove"
+      }
+    ]
+  }
+]

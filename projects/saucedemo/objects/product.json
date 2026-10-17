@@ -1,0 +1,28 @@
+
+{
+  "inventoryContainer": {
+    "type": "css",
+    "value": "[data-test='inventory-container']",
+    "name": "Inventory container"
+  },
+  "productName": {
+    "type": "css",
+    "value": "[data-test='inventory-item-name']",
+    "name": "Product names"
+  },
+  "backpackAddToCart": {
+    "type": "css",
+    "value": "[data-test='add-to-cart-sauce-labs-backpack']",
+    "name": "Add Sauce Labs Backpack to cart"
+  },
+  "backpackRemove": {
+    "type": "css",
+    "value": "[data-test='remove-sauce-labs-backpack']",
+    "name": "Remove Sauce Labs Backpack"
+  },
+  "cartBadge": {
+    "type": "css",
+    "value": "[data-test='shopping-cart-badge']",
+    "name": "Shopping cart badge"
+  }
+}

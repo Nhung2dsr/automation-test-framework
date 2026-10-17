@@ -1,0 +1,15 @@
+
+[
+  {
+    "id": "LOGIN_DATA_01",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expected": "success"
+  },
+  {
+    "id": "LOGIN_DATA_02",
+    "username": "standard_user",
+    "password": "wrong_password",
+    "expected": "error"
+  }
+]

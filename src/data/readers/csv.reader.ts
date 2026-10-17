@@ -9,7 +9,7 @@ export type CsvRow = Record<string, string>;
 export class CsvReader implements DataReader<CsvRow[]> {
    
     read(filePath: string): CsvRow[] {
-         const absolutePath = path.resolve(process.cwd(), filePath);
+         const absolutePath = path.resolve(filePath);
 
          if (!fs.existsSync(absolutePath)){
             throw new Error(`CSV file not found: ${absolutePath}`);

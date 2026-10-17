@@ -1,7 +1,13 @@
-import { test as base } from '@playwright/test';
+
+import { test as base, expect } from '@playwright/test';
+
+import { paths } from '../config/paths';
+
 import { KeywordEngine } from '../src/keywords/keywordEngine';
 import { TestEngine } from '../src/core/engine/testEngine';
+
 import { ObjectRegistry } from '../src/objects/objectRegistry';
+import { registerObjectRepositories } from '../src/objects/loaders/registerObjectRepositories';
 
 type EngineFixtures = {
     objectRegistry: ObjectRegistry;
@@ -10,12 +16,16 @@ type EngineFixtures = {
 };
 
 export const test = base.extend<EngineFixtures>({
-    objectRegistry: async ({ page }, use) => {
+
+    objectRegistry: async ({}, use) => {
         const registry = new ObjectRegistry();
+
+        registerObjectRepositories(registry, paths.objects);
+
         await use(registry);
     },
-    
-    keywordEngine: async ({ page, objectRegistry}, use) => {
+
+    keywordEngine: async ({ page, objectRegistry }, use) => {
         const keywordEngine = new KeywordEngine(page, objectRegistry);
 
         await use(keywordEngine);
@@ -28,4 +38,4 @@ export const test = base.extend<EngineFixtures>({
     },
 });
 
-export { expect } from '@playwright/test';
+export { expect };

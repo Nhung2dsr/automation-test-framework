@@ -1,0 +1,53 @@
+[
+  {
+    "id": "LOGIN_001",
+    "name": "Login successfully",
+    "description": "Login with valid credentials",
+    "steps": [
+      {
+        "keyword": "INPUT",
+        "target": "login.username",
+        "data": "standard_user"
+      },
+      {
+        "keyword": "INPUT",
+        "target": "login.password",
+        "data": "secret_sauce"
+      },
+      {
+        "keyword": "CLICK",
+        "target": "login.loginButton"
+      },
+      {
+        "keyword": "VERIFY_URL",
+        "expected": "/inventory.html"
+      }
+    ]
+  },
+  {
+    "id": "LOGIN_002",
+    "name": "Login with invalid password",
+    "description": "Verify login fails when password is invalid",
+    "steps": [
+      {
+        "keyword": "INPUT",
+        "target": "login.username",
+        "data": "standard_user"
+      },
+      {
+        "keyword": "INPUT",
+        "target": "login.password",
+        "data": "wrong_password"
+      },
+      {
+        "keyword": "CLICK",
+        "target": "login.loginButton"
+      },
+      {
+        "keyword": "VERIFY_TEXT",
+        "target": "login.errorMessage",
+        "expected": "Epic sadface: Username and password do not match any user in this service"
+      }
+    ]
+  }
+]
