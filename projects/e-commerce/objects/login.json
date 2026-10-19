@@ -1,0 +1,16 @@
+{
+    "username": {
+        "type": "css",
+        "value": "#user_login"
+    },
+
+    "password": {
+        "type": "css",
+        "value": "#user_pass"
+    },
+
+    "btnLogin": {
+        "type": "css",
+        "value": "#wp-submit"
+    }
+}
