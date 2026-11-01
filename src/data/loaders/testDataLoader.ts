@@ -1,4 +1,3 @@
-
 import path from 'path';
 
 import { JsonReader } from '../readers/json.reader';
@@ -34,7 +33,7 @@ export class TestDataLoader {
                 throw new Error(`Invalid test data at row ${index + 1}: expected an object.`);
             }
         }
-
+        
         return data as TestDataRow[];
     }
 }
