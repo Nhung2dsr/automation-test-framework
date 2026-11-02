@@ -1,4 +1,3 @@
-
 import type { TestType } from '@playwright/test';
 
 import { TestDataLoader } from '../data/loaders/testDataLoader';
