@@ -2,6 +2,7 @@ import { Page, Locator} from '@playwright/test'
 import { ObjectRegistry } from '../objects/objectRegistry'
 import { ObjectResolver } from '../objects/objectResolver'
 
+import { navigateAction } from './actions/navigate'
 import { clickAction } from './actions/click.action';
 import { inputAction } from './actions/input.action';
 import { selectAction } from './actions/select.action';
@@ -33,6 +34,18 @@ export class KeywordEngine {
 
     async execute(step: TestStep){
         switch (step.keyword) {
+
+            case 'NAVIGATE': {
+                if (step.data === undefined) {
+                    throw new Error(
+                        'Data is required for NAVIGATE keyword.'
+                    );
+                }
+
+                await navigateAction(this.page, step.data);
+                break;
+            }
+            
             // CLICK
             case 'CLICK': {
                 const locator = this.resolveTarget(step.target);
