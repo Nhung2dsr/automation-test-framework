@@ -1,4 +1,5 @@
 export type Keyword =
+  | 'NAVIGATE'
   | 'CLICK'
   | 'INPUT'
   | 'SELECT'
