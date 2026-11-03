@@ -5,5 +5,7 @@ export async function waitAction(
 ): Promise<void> {
 
     await locator.waitFor({state: 'visible'}); 
+
+    await locator.page().waitForTimeout(2000);
       
 }
