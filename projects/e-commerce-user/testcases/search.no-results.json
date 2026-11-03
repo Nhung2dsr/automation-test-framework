@@ -1,0 +1,29 @@
+[
+    {
+        "id": "SEARCH_NO_RESULTS",
+        "name": "Search products with no matching results",
+        "steps": [
+            {
+                "keyword": "INPUT",
+                "target": "search.keywordInput",
+                "data": "${keyword}"
+            },
+
+            {
+                "keyword": "CLICK",
+                "target": "search.searchButton"
+            },
+            
+            {
+                "keyword": "VERIFY_TEXT",
+                "target": "search.noResultsMessage",
+                "expected": "${expectedMessage}"
+            },
+
+            { 
+                "keyword": "WAIT",
+                "target": "search.noResultsMessage"
+            }
+        ]
+    }
+]

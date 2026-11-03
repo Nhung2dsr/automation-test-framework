@@ -1,0 +1,25 @@
+[
+    {
+      "id": "Search_03",
+      "keyword": "       ",
+      "expectedMessage": "No products were found matching your selection."
+    },
+    
+    {
+      "id": "Search_04",
+      "keyword": "ZZZ_NO_COURSE_98765",
+      "expectedMessage": "No products were found matching your selection."
+    },
+
+    {
+      "id": "Search_07",
+      "keyword": "@#$%",
+      "expectedMessage": "No products were found matching your selection."
+    },
+    
+    {
+      "id": "Search_08",
+      "keyword": "123456789",
+      "expectedMessage": "No products were found matching your selection."
+    }
+]

@@ -1,0 +1,46 @@
+{
+    "keywordInput": {
+        "type": "css",
+        "value": ".header-search-form input[name='s']"
+    },
+
+    "categorySelect": {
+        "type": "css",
+        "value": ".header-search-form select[name='product_cat']"
+    },
+
+    "searchButton": {
+        "type": "css",
+        "value": ".header-search-form button[type='submit']"
+    },
+
+    "productDetailTitle": {
+        "type": "css",
+        "value": "h1.product_title"
+    },
+
+    "resultItems": {
+        "type": "css",
+        "value": "ul.products.columns-4"
+    },
+
+    "productCards": {
+        "type": "css",
+        "value": "ul.products > li.product"
+    },
+
+    "productNames": {
+        "type": "css",
+        "value": "ul.products > li.product h2.woocommerce-loop-product__title"
+    },
+
+    "resultCount": {
+        "type": "css",
+        "value": "p.woocommerce-result-count"
+    },
+
+    "noResultsMessage": {
+        "type": "css",
+        "value": ".woocommerce-no-products-found .woocommerce-info"
+    }
+}

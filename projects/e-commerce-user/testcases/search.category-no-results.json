@@ -1,0 +1,30 @@
+[
+    {
+        "id": "SEARCH_CATEGORY_NO_RESULTS",
+        "name": "Search nonexistent products by category",
+        "steps": [
+            {
+                "keyword": "INPUT",
+                "target": "search.keywordInput",
+                "data": "${keyword}"
+            },
+
+            {
+                "keyword": "SELECT",
+                "target": "search.categorySelect",
+                "data": "${category}"
+            },
+            
+            {
+                "keyword": "CLICK",
+                "target": "search.searchButton"
+            },
+
+            {
+                "keyword": "VERIFY_TEXT",
+                "target": "search.noResultsMessage",
+                "expected": "${expectedMessage}"
+            }
+        ]
+    }
+]
