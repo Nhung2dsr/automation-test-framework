@@ -1,0 +1,8 @@
+id,email,password,expectedResult,expectedMessage
+Login_01,ptnhunghla@gmail.com,123456,success,phamnhung
+Login_02,,123456,required_email,
+Login_03,ptnhunghla@gmail.com,,required_password,
+Login_04,phamthinhung@gmail.com,123456,failure,Email không tồn tại
+Login_05,ptnhunghla@gmail.com,12345678,failure,Sai mật khẩu
+Login_06,,,register,/dang-ky
+Login_07,ptnhung@,123456,invalid_email,
