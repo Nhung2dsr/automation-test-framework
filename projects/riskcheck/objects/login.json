@@ -1,0 +1,35 @@
+{
+    "email": {
+        "type": "placeholder",
+        "value": "Nhập email"
+    },
+
+    "password": {
+        "type": "placeholder",
+        "value": "Nhập mật khẩu"
+    },
+
+    "loginButton": {
+        "type": "role",
+        "value": "button",
+        "name": "Gửi"
+    },
+
+
+    "registerLink": {
+        "type": "role",
+        "value": "link",
+        "name": "Đăng ký tài khoản"
+    },
+
+    "forgotPasswordLink": {
+        "type": "role",
+        "value": "link",
+        "name": "Quên mật khẩu?"
+    },
+
+    "errorMessage": {
+        "type": "xpath",
+        "value": "//p[contains(@style, 'color: red')]"
+    }
+}
