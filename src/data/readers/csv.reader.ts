@@ -18,9 +18,11 @@ export class CsvReader implements DataReader<CsvRow[]> {
          const content = fs.readFileSync(absolutePath, 'utf-8');
 
          const data = parse(content, {
-            columns: true,
+            columns: (headers: string[]) =>
+               headers.map(header => header.trim()),
+
             skip_empty_lines: true,
-            trim: true,
+            trim: false
          }) as CsvRow[];
 
          return data;
