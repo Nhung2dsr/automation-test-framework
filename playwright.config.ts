@@ -48,7 +48,9 @@ outputDir: path.join(reportRoot, 'test-results'),
 
         // Thu thập trace khi retry lần đầu
         screenshot: 'only-on-failure',
-        trace: 'retain-on-failure',
+        // trace: 'retain-on-failure',  //CHỈ TEST FAIL
+
+        trace: 'on',
         video: 'retain-on-failure',
     },
 
