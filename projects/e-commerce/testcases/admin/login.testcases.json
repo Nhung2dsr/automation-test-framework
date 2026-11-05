@@ -1,0 +1,30 @@
+[
+    {
+        "id": "LOGIN",
+        "name": "Kiểm thử đăng nhập Admin",
+        "steps": [
+            {
+                "keyword": "NAVIGATE",
+                "data": "/wp-login.php"
+            },
+
+            {
+                "keyword": "INPUT",
+                "target": "login.username",
+                "data": "${username}"
+            },
+
+            {
+                "keyword": "INPUT",
+                "target": "login.password",
+                "data": "${password}"
+            },
+
+            {
+                "keyword": "CLICK",
+                "target": "login.loginButton"
+            }
+
+        ]
+    }
+]

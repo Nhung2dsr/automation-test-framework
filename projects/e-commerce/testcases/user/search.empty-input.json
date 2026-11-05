@@ -1,0 +1,29 @@
+[
+    {
+        "id": "SEARCH_EMPTY_INPUT",
+        "name": "Search with empty keyword",
+        "steps": [
+            {
+                "keyword": "INPUT",
+                "target": "search.keywordInput",
+                "data": "${keyword}"
+            },
+
+            {
+                "keyword": "SELECT",
+                "target": "search.categorySelect",
+                "data": "${category}"
+            },
+
+            {
+                "keyword": "CLICK",
+                "target": "search.searchButton"
+            },
+
+            {
+                "keyword": "VERIFY_VISIBLE",
+                "target": "search.resultItems"
+            }
+        ]
+    }
+]
