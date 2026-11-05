@@ -1,0 +1,4 @@
+id,keyword,expectedKeyword,expectedCount
+Search_01,ISTQB,ISTQB,5
+Search_05,Foundation,Foundation,1
+Search_06,istqb,istqb,5

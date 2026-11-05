@@ -1,0 +1,21 @@
+﻿id,username,password,rememberMe,expectedResult,expectedMessage
+Auth_01,ptnhunghla-k24,Ptnhungk24@,false,success,
+Auth_02,ptnhunghla@gmail.com,Ptnhungk24@,false,success,
+Auth_03,,Ptnhungk24@,false,required_username,Vui lòng điền vào trường này
+Auth_04,ptnhung,WrongPass04,false,failure,not registered on this site
+Auth_05,phamthinhung240805@gmail.com,WrongPass12,false,failure,Unknown email address
+Auth_06,      ,AdminPass,false,failure,The username field is empty.
+Auth_07,ptnhunghla@gmai.com,Ptnhungk24@,false,failure,Unknown email address
+Auth_08,PTNHUNGHLA-K24,Ptnhungk24@,false,success,
+Auth_09,PTNHUNGHLA@GMAIL.COM,Ptnhungk24@,false,success,
+Auth_10, ptnhunghla-k24 ,Ptnhungk24@,false,success,
+Auth_11,@#$%^&,WrongPass123!,false,failure,not registered on this site
+Auth_12,ptnhunghla-k24,,false,required_password,Vui lòng điền vào trường này
+Auth_13,ptnhunghla-k24,PassFail,false,failure,incorrect
+Auth_14,ptnhunghla-k24,        ,false,failure,The password field is empty.
+Auth_15,ptnhunghla-k24,PTNHUNGK24@,false,failure,incorrect
+Auth_16,ptnhunghla-k24, Ptnhungk24@ ,false,success,
+Auth_17,ptnhunghla-k24,Ptnhungk24@,false,success,
+Auth_18,ptnhunghla-k24,Ptnhungk24@,true,success,
+Auth_20,ptnhung2408,Ptnhung@08,false,failure,not registered on this site
+
